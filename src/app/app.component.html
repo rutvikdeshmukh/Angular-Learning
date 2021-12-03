@@ -1,0 +1,70 @@
+<app-home
+  *ngIf="
+    !componentsType.subredditComponent &&
+    !componentsType.userComponent &&
+    !varRutvikResume &&
+    !lazyComponent &&
+    homescreenService.homescreen
+  "
+>
+</app-home>
+<button
+  type="button"
+  *ngIf="!componentsType.subredditComponent"
+  class="btn btn-primary"
+  (click)="SubredditsInformation()"
+>
+  Subreddit's Information
+</button>
+&nbsp;
+<button
+  type="button"
+  *ngIf="!componentsType.userComponent"
+  class="btn btn-primary"
+  (click)="usersInformation()"
+>
+  User's Information
+</button>
+&nbsp;
+<button
+  type="button"
+  class="btn btn-primary"
+  (click)="backToHome()"
+  *ngIf="
+    componentsType.userComponent ||
+    componentsType.subredditComponent ||
+    varRutvikResume ||
+    lazyComponent
+  "
+>
+  Back to Home
+</button>
+&nbsp;
+<button
+  type="button"
+  class="btn btn-primary"
+  (click)="homeScreen()"
+  *ngIf="!homescreenService.homescreen"
+>
+  Home screen
+</button>
+&nbsp;
+<button
+  type="button"
+  class="btn btn-primary"
+  (click)="rutvikResume()"
+  *ngIf="!varRutvikResume"
+>
+  Lazy Load Rutvik-Resume Module(Routing)
+</button>
+&nbsp;
+<button
+  class="btn btn-primary"
+  (click)="displayLazymoduleComponent()"
+  *ngIf="!lazyComponent"
+>
+  lazy Load Screen's Module(Manual)
+</button>
+&nbsp;
+<router-outlet *ngIf="!lazyComponent"> </router-outlet>
+<ng-template #one> </ng-template>

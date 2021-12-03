@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let subreddit of allSubreddits.memes">
+    <mat-card class="example-card mb-3">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ subreddit.author }}</mat-card-title>
+        <mat-card-subtitle>{{ subreddit.subreddit }}</mat-card-subtitle>
+
+        <a [href]="subreddit.postLink">
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+      </mat-card-header>
+      <img mat-card-lg-image [src]="subreddit.url" alt="Photo of a Shiba Inu" />
+    </mat-card>
+  </div>
+</div>

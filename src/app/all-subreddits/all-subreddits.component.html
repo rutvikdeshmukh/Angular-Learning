@@ -1,0 +1,59 @@
+<div *ngIf="!loading">
+  <div class="row" *ngIf="complete">
+    <div *ngIf="showAllSubreddits">
+      <form class="example-form">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-4 mt-4">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>
+                Search fav Subreddit
+                <mat-icon
+                  mat-icon
+                  aria-hidden="false"
+                  aria-label="Example home icon"
+                  >search</mat-icon
+                ></mat-label
+              >
+              <input
+                matInput
+                type="text"
+                [(ngModel)]="userEnteredSubredditName"
+                name="input_subreddit"
+              />
+            </mat-form-field>
+            &nbsp;
+            <button
+              mat-button
+              type="button"
+              class="btn btn-primary"
+              (click)="showUserEnteredSubreddit()"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+      <app-all-subreddits-info [allSubreddits]="allSubreddits">
+      </app-all-subreddits-info>
+    </div>
+    <router-outlet *ngIf="!showAllSubreddits"> </router-outlet>
+  </div>
+  <app-error-occured *ngIf="error"> </app-error-occured>
+</div>
+<ngx-spinner
+  *ngIf="loading"
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="large"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+></ngx-spinner>
+<button
+  type="button"
+  *ngIf="!showAllSubreddits"
+  class="btn btn-success"
+  (click)="backToHome()"
+>
+  Back
+</button>

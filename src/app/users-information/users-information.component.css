@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+.card {
+  width: 350px;
+  background-color: #efefef;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.image img {
+  transition: all 0.5s;
+}
+
+.card:hover .image img {
+  transform: scale(1.5);
+}
+.margin {
+  margin-top: 20px;
+}
+.padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}

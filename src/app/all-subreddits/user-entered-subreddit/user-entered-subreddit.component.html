@@ -1,0 +1,16 @@
+<ngx-spinner
+  *ngIf="loading"
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="large"
+  color="#fff"
+  type="square-jelly-box"
+  [fullScreen]="true"
+></ngx-spinner>
+
+<div *ngIf="!loading">
+  <div *ngIf="complete">
+    <app-all-subreddits-info [allSubreddits]="userSpecificSubreddits">
+    </app-all-subreddits-info>
+  </div>
+  <app-error-occured *ngIf="error"> </app-error-occured>
+</div>

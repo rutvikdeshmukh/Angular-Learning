@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Yusei Magic", sans-serif;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+header {
+  width: 100%;
+  height: 100vh;
+}
+nav {
+  width: 100%;
+  height: 15vh;
+  background: rgba(29, 161, 242, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+nav .website-name {
+  color: white;
+  width: 20%;
+  text-align: center;
+}
+.website-name h1 {
+  letter-spacing: 3px;
+}
+nav .menu a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+nav .menu {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+}
+main {
+  display: flex;
+  background-color: yellow;
+  width: 100%;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+section h3 {
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px black;
+}
+section h1 {
+  margin: 30px 0px 20px 0px;
+  font-size: 55px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px black;
+  text-transform: uppercase;
+}
+.change-text:after {
+  content: "";
+  animation: changetext 5s infinite linear;
+  color: white;
+}
+@keyframes changetext {
+  0% {
+    content: "Boy";
+  }
+  20% {
+    content: "Web Developer";
+  }
+  40% {
+    content: "Intern";
+  }
+  60% {
+    content: "Angular Developer";
+  }
+  80% {
+    content: "Vit Student";
+  }
+  100% {
+    content: "Indian";
+  }
+}
+nav .menu a:hover {
+  color: black;
+  transition: 0.7s;
+}
+nav .menu a:first-child {
+  color: black;
+}
